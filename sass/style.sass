@@ -1,0 +1,291 @@
+@font-face
+  font-family: lemon_cake
+  src: url("../fonts/lemon_cake/LemonCake.otf")
+
+
+/*********** Links **********
+
+.enlace
+  text-decoration: none
+  color: black
+  position: relative
+  font-family: "Verdana"
+  &:before
+    content: ""
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 0
+    height: 4px
+    width: 0
+    background-color: #FF7878
+    animation: width 0.5s
+    transition: all 0.4s
+    border-radius: 2px
+  &:hover:before
+    width: 100%
+
+.links a
+  &:link
+    color: #FF7878
+  &:hover
+    color: #FEF0F0
+    font-weight: bold
+
+/*************** HEADER **************
+
+.header
+  position: fixed
+  margin: 5px
+  height: 14.2%
+  background-color: white
+  border-bottom: 4px solid #FF7878
+  z-index: 1
+
+.buscar
+  margin-top: 30%
+
+/*************** MENU **************
+
+.nav
+  margin-top: 5%
+  > ul > li
+    float: left
+    a
+      display: inline-block
+      text-align: center
+      line-height: 50px
+      text-align: center
+      background-color: white
+      width: 100px
+      text-decoration: none
+      color: black
+    > ul
+      display: none
+      > li
+        position: relative
+        > ul
+          left: 100px
+          top: 0
+          display: none
+  ul
+    list-style: none
+    margin: 0
+    padding: 0
+
+.logo img
+  width: 70%
+  height: 70%
+
+.log img
+  margin-top: 45%
+  width: 70%
+
+.carrito img
+  margin-top: 45%
+  width: 65%
+
+/*************** CARRUSEL **************
+
+.carrusel
+  margin-top: 150px
+  margin-bottom: 15px
+
+.section
+  background: #FEF0F0
+
+ul, ol
+  list-style: none
+
+.slideshow
+  width: 70%
+
+.slider li, ul
+  width: 100%
+  margin-left: 60px
+
+.slider li
+  overflow: hidden
+  img
+    width: 90%
+
+/* Tamaño img del carrusel
+
+.pagination
+  top: 102%
+  width: 100%
+  display: flex
+  justify-content: center
+  margin-left: 20%
+  li
+    font-size: 20px
+    margin: 2px 5px
+    color: #858585
+    cursor: pointer
+
+.left, .right
+  position: absolute
+  top: 0
+  height: 100%
+  margin-left: 32%
+  margin-right: 35%
+  display: flex
+  align-items: center
+  color: #fff
+  font-size: 35px
+  cursor: pointer
+  z-index: 2
+
+.left
+  left: 10px
+
+.right
+  right: 10px
+
+/*************** COOKIES **************
+
+.cookies
+  display: none
+  position: fixed
+  bottom: 0px
+  padding-bottom: 20px
+  width: 69.7%
+  text-align: center
+  min-height: 40px
+  background-color: rgba(0, 0, 0, 0.7)
+  color: #fff
+  z-index: 99999
+
+.inner
+  width: 100%
+  position: absolute
+  padding-left: 5px
+  font-family: verdana
+  font-size: 12px
+  top: 30%
+  a
+    &.ok
+      padding: 4px
+      color: #ff7878
+      text-decoration: none
+    &.info
+      padding-left: 5px
+      text-decoration: none
+      color: #ff7878
+
+/*************** SECTION **************
+
+.titulosF, .titulosP
+  margin: 50px
+  text-align: center
+  font-family: lemon_cake
+  font-size: 40px
+
+/* FLEX PINTURA Y FOTO
+
+.fotografia, .pintura
+  display: flex
+  flex-direction: row
+  flex-wrap: nowrap
+  justify-content: space-around
+  margin-bottom: 20px
+
+/*************** HOVER IMG SECTION **************
+
+.piedefoto
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
+  transition: 0.3s
+  img
+    width: 100%
+  &:hover
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5)
+
+/*************** VER MAS **************
+
+.vermas
+  img
+    width: 4%
+    margin-left: 10px
+  p
+    text-align: center
+    font-family: lemon_cake
+    font-size: 20px
+
+/*************** FOOTER **************
+
+.footer
+  background-color: #333333
+  width: 100%
+  height: 125px
+  .RRSS, .links
+    margin-top: 15px
+    display: flex
+    flex-direction: row
+    flex-wrap: nowrap
+    justify-content: space-around
+    align-items: center
+    margin-bottom: 15px
+    width: 100%
+
+/*************** PAG LOGIN **************
+
+
+.login a
+  color: grey
+  text-decoration: none
+  &:hover
+    color: #FF7878
+    text-decoration: underline
+
+.signup
+  color: grey
+
+/* User y Pass
+
+.login
+  input
+    border: none
+    font-family: "Verdana"
+  text-align: center
+  margin: 50px auto
+  width: 280px
+  margin-top: 155px
+  form input
+    height: 30px
+    color: #606468
+    margin-bottom: 1em
+    padding: 0 16px
+    width: 198px
+    &[type="submit"]
+      background-color: #FF7878
+      color: #eee
+      font-weight: bold
+      width: 95%
+      &:hover
+        background-color: #EE5656
+    
+.botonLogout
+    height: 30px
+    color: #606468
+    padding: 0 16px
+    width: 198px
+
+/*************** ERROR 404 **************
+
+.error
+  font-family: "Verdana"
+  font-size: 30px
+  color: grey
+  text-align: center
+  background-color: #FEF0F0
+  height: 100%
+  width: 100%
+  h1
+    margin-left: 5%
+    text-align: left
+  h2
+    margin-right: 5%
+    text-align: right
+
+.volver
+  margin-left: 93%

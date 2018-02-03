@@ -1,0 +1,143 @@
+/* Mixins */
+* {
+  font-family: "Verdana"; }
+
+/* Links */
+.enlace {
+  text-decoration: none; 
+  color: black;
+  position: relative;
+}
+
+.enlace:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  width: 0;
+  background-color: #FF7878;
+  animation: width 0.5s;
+  transition: all 0.4s;
+  border-radius: 2px;
+}
+.enlace:hover:before {
+    width: 100%;
+}
+
+.links a:link {
+  color: #FF7878; }
+.links a:hover {
+  color: #FEF0F0;
+  font-weight: bold;
+}
+
+/* HEADER */
+.header {
+  position: fixed;
+  margin: 5px;
+  height: 14.2%;
+  background-color: white;
+  border-bottom: 4px solid #FF7878;
+}
+
+.buscar {
+  margin-top: 30%; }
+
+.nav {
+  margin-top: 5%; }
+
+.nav>ul>li {
+    float: left;
+    
+}
+.nav>ul>li a{
+    display: inline-block;
+    text-align: center;
+    line-height: 50px;
+    text-align: center;
+    background-color: white;
+    width: 100px;
+    text-decoration: none;
+    color: black;
+    
+    
+}
+.nav>ul>li>ul {
+    display: none;
+    
+}
+.nav>ul>li>ul>li {
+    position: relative;
+        
+}
+.nav>ul>li>ul>li>ul {
+    position: absolute;
+    left: 100px;
+    top: 0;
+    display: none;
+}
+
+.nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.logo img {
+  width: 70%;
+  height: 70%; }
+
+.log img {
+  margin-top: 45%;
+  width: 70%; }
+
+.carrito img {
+  margin-top: 45%;
+  width: 65%; }
+
+/* CUERPO PÁGINA */
+.section {
+  background: #FEF0F0; 
+}
+.titulo{
+    margin-top: 13%;
+    margin-left: 5%;
+}
+
+.detalles {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    margin-bottom: 10%;
+}
+
+.detalles img{
+    width: 250px;
+    height: 300px;
+}
+.textoDetalles img {
+    width: 25px;
+    height: 25px;
+    margin-left: 5%;
+}
+
+
+
+/* FOOTER */
+.footer {
+  background-color: #333333;
+  width: 100%; }
+  .footer .RRSS, .footer .links {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 15px;
+    width: 100%; }
+
