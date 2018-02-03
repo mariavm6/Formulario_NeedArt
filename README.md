@@ -1,37 +1,37 @@
-# Formulario para la p·gina NeedArt!
+# Formulario para la p√°gina NeedArt!
 
-En esta pr·ctica hemos integrado un formalario de registro para nuestro escaparate virtual.
+En esta pr√°ctica hemos integrado un formalario de registro para nuestro escaparate virtual.
 
-## Proceso de creaciÛn del formulario:
+## Proceso de creaci√≥n del formulario:
 
-Creamos un formulario con todos los campos obligatorios de nombre, apellidos, direcciÛn de correo, contraseÒa y confirmar contraseÒa. Y los opcionales sexo, fecha de nacimiento, direcciÛn, n∫ de tarjeta de crÈdito y dos checkbox de recibir notificaciones y revista digital.
-La estructura del formulario la implementamos en HTML5 y con css le dimos estilo para que se integrara con el estilo de la p·gina.
+Creamos un formulario con todos los campos obligatorios de nombre, apellidos, direcci√≥n de correo, contrase√±a y confirmar contrase√±a. Y los opcionales sexo, fecha de nacimiento, direcci√≥n, n¬∫ de tarjeta de cr√©dito y dos checkbox de recibir notificaciones y revista digital.
+La estructura del formulario la implementamos en HTML5 y con css le dimos estilo para que se integrara con el estilo de la p√°gina.
 
 **1.Requisitos funcionales** 
-Uno de los requisitos de la pr·ctica era que se validaran los datos introducidos por el usuario.
+Uno de los requisitos de la pr√°ctica era que se validaran los datos introducidos por el usuario.
 Para ello utilizamos las restricciones que nos proporciona HTML5 con la etiqueta type y pattern y funciones de JavaScript.
-Con JavaScript tambiÈn le dotamos al formulario de interactividad, al cambiar los mensajes de error predeterminados de HTML5.
+Con JavaScript tambi√©n le dotamos al formulario de interactividad, al cambiar los mensajes de error predeterminados de HTML5.
 
-- Para validar los diferentes campos obligatorios primero deben pasar los filtros de patern y type que hemos establecido para cada tipo en el HTML5, tambiÈn para que el usuario no deje ning˙n campo vacÌo hemos puesto a estos campos el atributo required.
-La validaciÛn con JS consiste en seleccionar el input del formulario que queramos validar a travÈs de su id, lanzamos un evento que al hacer keyup de una tecla del teclado y lance la funcion, que comprueba si no se cumple la expresiÛn regular y si est· vacio el input del elemento, si es asÌ se lanza un mensaje de error personalizado para  informar al usuario.
-Ejemplo de validaciÛn:
+- Para validar los diferentes campos obligatorios primero deben pasar los filtros de patern y type que hemos establecido para cada tipo en el HTML5, tambi√©n para que el usuario no deje ning√∫n campo vac√≠o hemos puesto a estos campos el atributo required.
+La validaci√≥n con JS consiste en seleccionar el input del formulario que queramos validar a trav√©s de su id, lanzamos un evento que al hacer keyup de una tecla del teclado y lance la funcion, que comprueba si no se cumple la expresi√≥n regular y si est√° vacio el input del elemento, si es as√≠ se lanza un mensaje de error personalizado para  informar al usuario.
+Ejemplo de validaci√≥n:
 
 form["email"].addEventListener("keyup", function(){
     var expReg = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:[a-zA-Z0-9-]+)*(\.{1})([a-z]){2,3}$/g;
     if(!expReg.test(form["email"].value) || form["email"].value == ""){
-        form["email"].setCustomValidity("La direcciÛn de email debe tener el patron example@ejemplo.com");
+        form["email"].setCustomValidity("La direcci√≥n de email debe tener el patron example@ejemplo.com");
     }
     else{
         form["email"].setCustomValidity("");
     }
 });
 
-Para la confirmaciÛn de la contraseÒa lo que hicimos fue comparar el valor del input de password con el de passwordAgain.
+Para la confirmaci√≥n de la contrase√±a lo que hicimos fue comparar el valor del input de password con el de passwordAgain.
 
 form["passwordAgain"].addEventListener("keyup", function(){
     var expReg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W)[A-Za-z\d\W]{8,15}$/g;
     if(form["password"].value !== form["passwordAgain"].value){
-        form["passwordAgain"].setCustomValidity("La contraseÒas deben coincidir");
+        form["passwordAgain"].setCustomValidity("La contrase√±as deben coincidir");
     }
     else{
         form["passwordAgain"].setCustomValidity("");
@@ -41,61 +41,59 @@ form["passwordAgain"].addEventListener("keyup", function(){
 - Campos no obligatorios:
 Los campos no obligatorios los validamos con las propiedades de HTML5.
 
-- CreaciÛn del input pais utilizando JavaScript:
-Para que la p·gina y el registro sean totalmente inclusivos creamos un <select> con todos los paises del mundo generados por una funciÛn que recorre con un forEach un array con todos los paÌses del mundo y para cada paÌs crea una etiqueta <option> con el atributo value igual al paÌs y lo enlaza con el select del HTML.
+- Creaci√≥n del input pais utilizando JavaScript:
+Para que la p√°gina y el registro sean totalmente inclusivos creamos un <select> con todos los paises del mundo generados por una funci√≥n que recorre con un forEach un array con todos los pa√≠ses del mundo y para cada pa√≠s crea una etiqueta <option> con el atributo value igual al pa√≠s y lo enlaza con el select del HTML.
 
 
-- Tarjeta de CrÈdito:
-Este campo solo podÌa aparecer ˙nicamente cuando se indique una direcciÛn y el paÌs, para ello realizmos una funciÛn que comprueba que los campos de direcciÛn y paÌs no estÈn vacÌos, si esto se cumple crea un <input> con un atributo type igual a number. Si en un principio se rellena pero se borran campos hacemos otra comprobaciÛn para que el <input> desaparezca.
+- Tarjeta de Cr√©dito:
+Este campo solo pod√≠a aparecer √∫nicamente cuando se indique una direcci√≥n y el pa√≠s, para ello realizmos una funci√≥n que comprueba que los campos de direcci√≥n y pa√≠s no est√©n vac√≠os, si esto se cumple crea un <input> con un atributo type igual a number. Si en un principio se rellena pero se borran campos hacemos otra comprobaci√≥n para que el <input> desaparezca.
 
 - Checkbox:
-Con la etiqueta checkbox aÒadimos las opciones de notificaciÛn de novedades y recepciÛn de la revista digital.
+Con la etiqueta checkbox a√±adimos las opciones de notificaci√≥n de novedades y recepci√≥n de la revista digital.
 
-**2.Requisitos tÈcnicos:**
-- Para indicar de forma visible los campos que son obligatorios aÒadimos en sus correspodientes <label> un (*).
+**2.Requisitos t√©cnicos:**
+- Para indicar de forma visible los campos que son obligatorios a√±adimos en sus correspodientes <label> un (*).
 
-- Si los datos son correctos, mostrar· un mensaje que indique que usuario se registrÛ correctamente y crear· una una cookie con el nombre del usuario y su password hasheado.
+- Si los datos son correctos, mostrar√° un mensaje que indique que usuario se registr√≥ correctamente y crear√° una una cookie con el nombre del usuario y su password hasheado.
 
-- Al hacer login se comprobar· en las cookies si existe para ese usuario y la contraseÒa es correcta, en ese caso creara otra cookie para dejar abierta la sesiÛn para ese usuario. TambiÈn se aÒadir· la opciÛn de cerrar sesiÛn que borrar· la cookie de sesiÛn creada anteriormente.
+- Al hacer login se comprobar√° en las cookies si existe para ese usuario y la contrase√±a es correcta, en ese caso creara otra cookie para dejar abierta la sesi√≥n para ese usuario. Tambi√©n se a√±adir√° la opci√≥n de cerrar sesi√≥n que borrar√° la cookie de sesi√≥n creada anteriormente.
 
-- No se podr· utilizar ning˙n tipo de framework para la implementaciÛn del formulario.
+- No se podr√° utilizar ning√∫n tipo de framework para la implementaci√≥n del formulario.
 
 **3.Funciones para las cookies**
 
 - Cookie de usuario que se crea cuando completa el formulario de registro:
-Para crear las cookies hemos hecho la funciÛn setCookie que recibe el nombre, la contraseÒa y un valor numÈrico que es el tiempo en el que se borrar· la cookie. La funciÛn crea un par clave-valor con el nombre y la contraseÒa que el usuario ha introducido al rellenar el formulario de registro. Esta funciÛn la llamamos en el momento que que se pulsa el botÛn de registro y se ha validado correctamente el formulario.
+Para crear las cookies hemos hecho la funci√≥n setCookie que recibe el nombre, la contrase√±a y un valor num√©rico que es el tiempo en el que se borrar√° la cookie. La funci√≥n crea un par clave-valor con el nombre y la contrase√±a que el usuario ha introducido al rellenar el formulario de registro. Esta funci√≥n la llamamos en el momento que que se pulsa el bot√≥n de registro y se ha validado correctamente el formulario.
 
-La funciÛn getCookie lo que hace es coger los datos del nombre y la contraseÒa y comprueba si esas credenciales coinciden con la cookie de alg˙n usuario registrado. 
+La funci√≥n getCookie lo que hace es coger los datos del nombre y la contrase√±a y comprueba si esas credenciales coinciden con la cookie de alg√∫n usuario registrado. 
 
 
-- Cookie de sesiÛn que se crea cuando el usuario hace el login:
-Cuando el usuario rellena los campos del login se llama a una funciÛn que esta a su vez llama a getCookie y comprueba que el nombre y la contraseÒa cifrada estÈn en las cookies creadas al hacer el registro(cookie de usuario), si es asÌ, se llama a la funciÛn setCookie que crea la cookie de sesiÛn y se muestra un mensaje de bienvenida. Si no es asÌ se muestra un mensaje de que las credenciales no son correctas.
-TambiÈn se nos pedÌa que cuando se hiciese login apareciese un botÛn de logout, esto lo hemos hecho creando un botÛn con un estilo display:none que lo oculta. Una vez que el login es correcto el estilo se cambia a display:block y aparece.
+- Cookie de sesi√≥n que se crea cuando el usuario hace el login:
+Cuando el usuario rellena los campos del login se llama a una funci√≥n que esta a su vez llama a getCookie y comprueba que el nombre y la contrase√±a cifrada est√©n en las cookies creadas al hacer el registro(cookie de usuario), si es as√≠, se llama a la funci√≥n setCookie que crea la cookie de sesi√≥n y se muestra un mensaje de bienvenida. Si no es as√≠ se muestra un mensaje de que las credenciales no son correctas.
+Tambi√©n se nos ped√≠a que cuando se hiciese login apareciese un bot√≥n de logout, esto lo hemos hecho creando un bot√≥n con un estilo display:none que lo oculta. Una vez que el login es correcto el estilo se cambia a display:block y aparece.
 
-- Encriptar contraseÒas: 
-Para encriptar las contraseÒas se ha buscado un cÛdigo de cifrado en [js-sha256]{@link https://github.com/emn178/js-sha256}
+- Encriptar contrase√±as: 
+Para encriptar las contrase√±as se ha buscado un c√≥digo de cifrado en [js-sha256]{@link https://github.com/emn178/js-sha256}
 
-- Borrar cookie de sesiÛn:
-En la pr·ctica nos piden que cuando se haga logout se borre la cookie de sesiÛn, lo hemos conseguido poniendole un onclick al botÛn logout que llama a la funciÛn logoutSesion(), que cambia la fecha de expiraciÛn a la fecha unix.
+- Borrar cookie de sesi√≥n:
+En la pr√°ctica nos piden que cuando se haga logout se borre la cookie de sesi√≥n, lo hemos conseguido poniendole un onclick al bot√≥n logout que llama a la funci√≥n logoutSesion(), que cambia la fecha de expiraci√≥n a la fecha unix.
 
 **4.Pruebas automatizadas**
-Hemos realizado 10 pruebas automatizadas para validar el formulario utilizando el plugin de Selenium para Chrome junto con el servidor ligero que utilizamos para la pr·ctica de migas de pan.
+Hemos realizado 10 pruebas automatizadas para validar el formulario utilizando el plugin de Selenium para Chrome junto con el servidor ligero que utilizamos para la pr√°ctica de migas de pan.
 - Prueba 1: Se completa el formulario sin errores.
 - Prueba 2: Se introduce mal el nombre.
 - Prueba 3: Se introduce mal el apellido.
 - Prueba 4: Se introduce mal el email.
-- Prueba 5: Se introduce mal la contraseÒa.
+- Prueba 5: Se introduce mal la contrase√±a.
 - Prueba 6: No se introduce nombre.
 - Prueba 7: No se introduce apellido.
 - Prueba 8: No se introduce email.
-- Prueba 9: No se introduce contraseÒa.
+- Prueba 9: No se introduce contrase√±a.
 - Prueba 10: Solo se rellenan los campos obligatorios.
-Las pruebas automatizadas se han tenido que realizar en proyectos separados, ya que al hacerlas juntas se producÌan fallos al ejecutar.
+Las pruebas automatizadas se han tenido que realizar en proyectos separados, ya que al hacerlas juntas se produc√≠an fallos al ejecutar.
 
-#### Autora
-
-s
+#### Autoras
 
 - **Gema de la Fuente Romero** - [Github](https://github.com/Gema-de-la-Fuente)
 
-- **MarÌa Villalobos MartÌn** - [Github](https://github.com/mariavm6)
+- **Mar√≠a Villalobos Mart√≠n** - [Github](https://github.com/mariavm6)
